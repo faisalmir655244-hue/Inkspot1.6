@@ -1,137 +1,200 @@
-# Inkspot1.6
-INKSPOT — Customised Gifts & Printing 🎨
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17132b">
+  <title>INKSPOT | Customised Gifts & Printing</title>
+  <style>
+    :root{--ink:#17132b;--purple:#7046d3;--purple2:#9877f2;--bg:#f6f4fb;--muted:#6f6a7d;--line:#e8e3f1;--white:#fff}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
+    header{background:linear-gradient(125deg,#17132b,#30205c 65%,#6845b8);color:#fff;padding:22px max(5%,calc((100% - 1180px)/2))}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+    .brand{font-size:25px;font-weight:900;letter-spacing:2px}.brand span{color:#c7b5ff}
+    .nav a{color:#fff;text-decoration:none;font-weight:700;margin-left:18px;font-size:14px}
+    .hero{max-width:1180px;margin:0 auto;padding:68px 5% 76px}
+    .eyebrow{color:#d4c6ff;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
+    h1{font-size:clamp(36px,6vw,62px);line-height:1.04;margin:15px 0;max-width:720px}
+    .hero p{color:#e2dcf2;max-width:600px;line-height:1.7;font-size:16px}
+    .btn{display:inline-block;border:0;border-radius:10px;padding:13px 19px;background:var(--purple);color:#fff;text-decoration:none;font-weight:800;cursor:pointer}
+    .btn.light{background:#fff;color:var(--ink);margin-top:14px}.btn:hover{filter:brightness(1.08)}
+    main{max-width:1180px;margin:0 auto;padding:42px 5% 70px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:22px}
+    h2{font-size:30px;margin:0 0 8px}.sub{color:var(--muted);margin:0;line-height:1.5}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .product{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 8px 24px #21134d0a;display:flex;flex-direction:column;min-height:205px}
+    .product .emoji{font-size:34px;margin-bottom:13px}.product h3{margin:0 0 8px;font-size:18px}.product p{margin:0 0 18px;color:var(--muted);font-size:13px;line-height:1.5;flex:1}
+    .product .btn{width:100%}
+    .info{margin-top:32px;padding:22px;border-radius:16px;background:#eee9fb;line-height:1.65;color:#45366d}
+    footer{background:#17132b;color:#dcd5ef;padding:28px 5%;text-align:center;font-size:13px;line-height:1.8}
+    footer a{color:#d1c0ff}
+    .modal{display:none;position:fixed;inset:0;background:#100b20b8;z-index:10;overflow:auto;padding:22px}
+    .modal.show{display:block}.dialog{max-width:720px;margin:20px auto;background:#fff;border-radius:18px;padding:26px;box-shadow:0 20px 70px #0004}
+    .dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+    .dialog h2{font-size:25px}.close{border:0;background:#f0edf6;border-radius:9px;padding:9px 12px;font-size:20px;cursor:pointer}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}
+    label{font-size:13px;font-weight:800}.required{color:#c33}
+    input,select,textarea{width:100%;padding:12px;border:1px solid #dcd6e8;border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+    textarea{min-height:92px;resize:vertical}
+    input:focus,select:focus,textarea:focus{outline:2px solid #c9b8ff;border-color:var(--purple)}
+    .hint{font-size:11px;color:var(--muted);line-height:1.4}
+    .form-actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;margin-top:5px}
+    .btn.secondary{background:#eeeaf6;color:#34265c}
+    .result{display:none;margin-top:18px;padding:17px;border-radius:12px;background:#f0ebfb;border:1px solid #ded3f7}
+    .result.show{display:block}.result h3{margin:0 0 8px}.result pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 Arial;color:#30264a}
+    @media(max-width:600px){.hero{padding:48px 5% 55px}form{grid-template-columns:1fr}.field.full,.form-actions{grid-column:1}.dialog{padding:19px}.nav a{margin-left:10px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">INK<span>SPOT</span></div>
+    <nav><a href="#products">Products</a><a href="#how">How to Order</a><a href="#contact">Contact</a></nav>
+  </div>
+  <section class="hero">
+    <div class="eyebrow">Personalised gifts • Custom printing</div>
+    <h1>Your ideas,<br>made personal.</h1>
+    <p>Make every moment special with customised frames, mugs, bottles, keychains and more. Choose a product and send your order details to INKSPOT.</p>
+    <a class="btn light" href="#products">Explore Products</a>
+  </section>
+</header>
 
-<p align="center">
-  <strong>Your Ideas, Made Personal.</strong>
-</p><p align="center">
-  A modern, responsive HTML-based order website for customised gifts, personalised products, and printing services.
-</p><p align="center">
-  <img src="https://img.shields.io/badge/Project-INKSPOT-7046D3?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/HTML5-Website-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-Styling-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-Interactive-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
-</p>---
+<main>
+  <section id="products">
+    <div class="section-head">
+      <div><h2>Our Products</h2><p class="sub">Choose a product to open its order form.</p></div>
+      <span class="sub">8 customisation options</span>
+    </div>
+    <div class="grid">
+      <article class="product"><div class="emoji">🖼️</div><h3>Customised Photo Frame</h3><p>Personalised photo frames for memories and gifts.</p><button class="btn" onclick="openOrder('Customised Photo Frame')">Order Now</button></article>
+      <article class="product"><div class="emoji">☕</div><h3>Customised Mug</h3><p>Custom names, photos and designs on mugs.</p><button class="btn" onclick="openOrder('Customised Mug')">Order Now</button></article>
+      <article class="product"><div class="emoji">🧴</div><h3>Customised Bottle</h3><p>Personalised bottles with your chosen design.</p><button class="btn" onclick="openOrder('Customised Bottle')">Order Now</button></article>
+      <article class="product"><div class="emoji">🔑</div><h3>Keychain</h3><p>Custom keychains with names, photos or text.</p><button class="btn" onclick="openOrder('Keychain')">Order Now</button></article>
+      <article class="product"><div class="emoji">🏷️</div><h3>Acrylic Badge</h3><p>Personalised acrylic badges for events and groups.</p><button class="btn" onclick="openOrder('Acrylic Badge')">Order Now</button></article>
+      <article class="product"><div class="emoji">💳</div><h3>Acrylic Card</h3><p>Custom acrylic cards with your details and artwork.</p><button class="btn" onclick="openOrder('Acrylic Card')">Order Now</button></article>
+      <article class="product"><div class="emoji">🎗️</div><h3>Customised Sash</h3><p>Custom printed sashes for schools, events and occasions.</p><button class="btn" onclick="openOrder('Customised Sash')">Order Now</button></article>
+      <article class="product"><div class="emoji">🪪</div><h3>Lanyard</h3><p>Personalised lanyards for IDs, teams and events.</p><button class="btn" onclick="openOrder('Lanyard')">Order Now</button></article>
+    </div>
+  </section>
 
-✨ About INKSPOT
+  <section id="how" class="info">
+    <h2>How to Order</h2>
+    1. Select your product and complete its order form.<br>
+    2. Add your delivery details and customisation instructions.<br>
+    3. Choose fixed-price product or request a quotation.<br>
+    4. Review your order summary and send it to INKSPOT by WhatsApp or email.
+    <p><strong>Important:</strong> Your order is only a request. Price, delivery charges and availability must be confirmed by INKSPOT. No payment is taken on this website.</p>
+  </section>
+</main>
 
-INKSPOT is a customised gifts and printing order website built to make ordering personalised products simple and convenient.
+<footer id="contact">
+  <strong>INKSPOT</strong><br>
+  Customised Gifts & Printing<br>
+  WhatsApp: <a href="https://wa.me/91910390655">+91 9103090655</a> |
+  Email: <a href="mailto:faisalmir655244@gmail.com">faisalmir655244@gmail.com</a><br>
+  © <span id="year"></span> INKSPOT. All rights reserved.
+</footer>
 
-Customers can explore products, select their preferred item, enter personalisation details, provide delivery information, and prepare an order request through WhatsApp or Email.
+<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
+  <div class="dialog">
+    <div class="dialog-top"><div><h2 id="formTitle">Product Order Form</h2><p class="sub">Fill in the details below.</p></div><button class="close" onclick="closeOrder()" aria-label="Close">×</button></div>
+    <form id="orderForm">
+      <div class="field full"><label for="product">Product</label><input id="product" name="product" readonly></div>
+      <div class="field"><label for="customer">Customer Name <span class="required">*</span></label><input id="customer" name="customer" required maxlength="100" autocomplete="name"></div>
+      <div class="field"><label for="email">Customer Email <span class="required">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="phone">WhatsApp Number <span class="required">*</span></label><input id="phone" name="phone" type="tel" required maxlength="20" autocomplete="tel"></div>
+      <div class="field"><label for="area">Area / District <span class="required">*</span></label><input id="area" name="area" required></div>
+      <div class="field full"><label for="address">Full Delivery Address <span class="required">*</span></label><textarea id="address" name="address" required autocomplete="street-address"></textarea></div>
+      <div class="field"><label for="pin">PIN Code <span class="required">*</span></label><input id="pin" name="pin" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required placeholder="6-digit PIN code"></div>
+      <div class="field"><label for="pricing">Pricing Type <span class="required">*</span></label><select id="pricing" name="pricing" required><option value="">Select pricing type</option><option>Standard Product - Fixed Price</option><option>Custom Design - Request Quotation</option></select></div>
+      <div class="field"><label for="quantity">Quantity <span class="required">*</span></label><select id="quantity" name="quantity" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>10</option></select></div>
+      <div class="field full"><label for="design">Design / Name / Printing Details <span class="required">*</span></label><textarea id="design" name="design" required placeholder="Describe the name, text, colour, photo or design you want."></textarea></div>
+      <div class="field full"><label for="drive">Photo or Design Google Drive Link</label><input id="drive" name="drive" type="url" placeholder="https://drive.google.com/..."><span class="hint">Set the file's Google Drive access so INKSPOT can view it. This form does not upload files.</span></div>
+      <div class="field full"><label for="notes">Additional Instructions</label><textarea id="notes" name="notes" placeholder="Any other instructions (optional)"></textarea></div>
+      <div class="form-actions"><button class="btn" type="submit">Create Order Summary</button><button class="btn secondary" type="button" onclick="closeOrder()">Cancel</button></div>
+    </form>
+    <div class="result" id="result" aria-live="polite">
+      <h3>Order summary created</h3>
+      <p class="sub">Your details are ready. Choose WhatsApp or email to send the order request.</p>
+      <pre id="summaryText"></pre>
+      <div class="form-actions"><button class="btn" id="whatsappBtn" type="button">Send by WhatsApp</button><button class="btn secondary" id="emailBtn" type="button">Send by Email</button><button class="btn secondary" id="copyBtn" type="button">Copy Summary</button></div>
+      <p class="hint">An order ID is generated in this browser for reference. It is not saved to a central order database.</p>
+    </div>
+  </div>
+</div>
 
-The website features a clean interface, modern design, responsive layout, and individual order forms for eight product categories.
+<script>
+  const OWNER_EMAIL = "faisalmir655244@gmail.com";
+  const OWNER_WHATSAPP = "91910390655";
+  let currentSummary = "";
 
-🚀 Features
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-- Modern and responsive user interface.
-- Premium INKSPOT branding.
-- Eight individual product order options.
-- Customer information collection.
-- Delivery address and PIN code fields.
-- Standard pricing and quotation request options.
-- Quantity selection.
-- Custom design and printing instructions.
-- Google Drive design-link field.
-- Automatic browser-generated order reference.
-- Order summary generation.
-- WhatsApp order sharing.
-- Email order sharing.
-- Mobile-friendly layout.
+  function openOrder(productName) {
+    document.getElementById("orderForm").reset();
+    document.getElementById("product").value = productName;
+    document.getElementById("formTitle").textContent = productName + " Order Form";
+    document.getElementById("result").classList.remove("show");
+    document.getElementById("orderModal").classList.add("show");
+    document.body.style.overflow = "hidden";
+  }
 
-🛍️ Products
+  function closeOrder() {
+    document.getElementById("orderModal").classList.remove("show");
+    document.body.style.overflow = "";
+  }
 
-No.| Product| Customisation
-01| Customised Photo Frame| Personalised photos
-02| Customised Mug| Names, photos and designs
-03| Customised Bottle| Personalised printing
-04| Keychain| Names, photos and text
-05| Acrylic Badge| Custom badge designs
-06| Acrylic Card| Personalised acrylic cards
-07| Customised Sash| Custom printed sashes
-08| Lanyard| Personalised lanyards
+  document.getElementById("orderModal").addEventListener("click", function(e) {
+    if (e.target === this) closeOrder();
+  });
 
-🛠️ Technologies Used
+  document.getElementById("orderForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    if (!this.reportValidity()) return;
 
-- HTML5 — Website structure.
-- CSS3 — Modern styling and responsive design.
-- JavaScript — Interactive order forms and order summaries.
-- WhatsApp URL API — Sharing order requests.
-- Email (mailto) — Preparing order emails.
+    const data = new FormData(this);
+    const orderId = "INK-" + Date.now();
+    const date = new Date().toLocaleString("en-IN");
+    const fields = [
+      ["Order ID", orderId], ["Date", date], ["Product", data.get("product")],
+      ["Customer", data.get("customer")], ["Email", data.get("email")],
+      ["WhatsApp", data.get("phone")], ["Full Delivery Address", data.get("address")],
+      ["Area / District", data.get("area")], ["PIN Code", data.get("pin")],
+      ["Pricing Type", data.get("pricing")], ["Quantity", data.get("quantity")],
+      ["Design Details", data.get("design")], ["Photo / Design Link", data.get("drive") || "Not provided"],
+      ["Additional Instructions", data.get("notes") || "None"],
+      ["Status", "NEW - PAYMENT NOT RECEIVED"]
+    ];
+    currentSummary = "INKSPOT ORDER REQUEST\n" + fields.map(([k,v]) => k + ": " + v).join("\n");
+    document.getElementById("summaryText").textContent = currentSummary;
+    document.getElementById("result").classList.add("show");
 
-📂 Project Structure
+    document.getElementById("whatsappBtn").onclick = function() {
+      window.open("https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(currentSummary), "_blank");
+    };
+    document.getElementById("emailBtn").onclick = function() {
+      const subject = "New INKSPOT Order - " + orderId;
+      window.location.href = "mailto:" + OWNER_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(currentSummary);
+    };
+    document.getElementById("copyBtn").onclick = async function() {
+      try {
+        await navigator.clipboard.writeText(currentSummary);
+        this.textContent = "Copied!";
+      } catch(err) {
+        const area = document.createElement("textarea");
+        area.value = currentSummary; document.body.appendChild(area);
+        area.select(); document.execCommand("copy"); area.remove();
+        this.textContent = "Copied!";
+      }
+    };
+    document.getElementById("result").scrollIntoView({behavior:"smooth", block:"nearest"});
+  });
 
-INKSPOT/
-│
-├── index.html
-└── README.md
-
-💻 Installation & Setup
-
-1. Clone the Repository
-
-git clone https://github.com/YOUR-USERNAME/INKSPOT.git
-
-2. Open Project Folder
-
-cd INKSPOT
-
-3. Run the Website
-
-Open "index.html" in your browser.
-
-No installation, database, or build tools are required.
-
-🌐 GitHub Pages Deployment
-
-You can host the INKSPOT website for free using GitHub Pages.
-
-1. Upload "index.html" and "README.md" to your GitHub repository.
-2. Open repository Settings.
-3. Select Pages.
-4. Under Build and deployment, select Deploy from a branch.
-5. Choose the "main" branch and "/ (root)" folder.
-6. Click Save.
-
-Your website will be published at:
-
-https://YOUR-USERNAME.github.io/INKSPOT/
-
-📞 Contact & Business Information
-
-Business: INKSPOT
-Email: faisalmir655244@gmail.com
-WhatsApp: +91 9103090655
-
-- WhatsApp: https://wa.me/91910390655
-- Email: mailto:faisalmir655244@gmail.com
-
-⚠️ Important Notes
-
-- This is an HTML, CSS and JavaScript frontend project.
-- Orders are prepared for manual WhatsApp or email submission.
-- No automatic Google Sheets storage is configured.
-- No online payment gateway is integrated.
-- Order references are generated locally in the browser and are not centrally stored.
-- Product prices and delivery charges must be confirmed by INKSPOT.
-
-🔮 Future Improvements
-
-- Admin dashboard.
-- Google Sheets order management.
-- Automatic email notifications.
-- Online payment integration.
-- Customer order tracking.
-- Product gallery and image uploads.
-- Product pricing management.
-- Order status updates.
-
-❤️ Developed for INKSPOT
-
-INKSPOT — Your Ideas, Made Personal.
-
-Customised Gifts | Personalised Printing | Creative Designs
-
----
-
-<p align="center">
-  Made with ❤️ for INKSPOT
-</p>
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") closeOrder();
+  });
+</script>
+</body>
+</html>
