@@ -1,200 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#17132b">
-  <title>INKSPOT | Customised Gifts & Printing</title>
-  <style>
-    :root{--ink:#17132b;--purple:#7046d3;--purple2:#9877f2;--bg:#f6f4fb;--muted:#6f6a7d;--line:#e8e3f1;--white:#fff}
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink)}
-    header{background:linear-gradient(125deg,#17132b,#30205c 65%,#6845b8);color:#fff;padding:22px max(5%,calc((100% - 1180px)/2))}
-    .nav{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
-    .brand{font-size:25px;font-weight:900;letter-spacing:2px}.brand span{color:#c7b5ff}
-    .nav a{color:#fff;text-decoration:none;font-weight:700;margin-left:18px;font-size:14px}
-    .hero{max-width:1180px;margin:0 auto;padding:68px 5% 76px}
-    .eyebrow{color:#d4c6ff;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800}
-    h1{font-size:clamp(36px,6vw,62px);line-height:1.04;margin:15px 0;max-width:720px}
-    .hero p{color:#e2dcf2;max-width:600px;line-height:1.7;font-size:16px}
-    .btn{display:inline-block;border:0;border-radius:10px;padding:13px 19px;background:var(--purple);color:#fff;text-decoration:none;font-weight:800;cursor:pointer}
-    .btn.light{background:#fff;color:var(--ink);margin-top:14px}.btn:hover{filter:brightness(1.08)}
-    main{max-width:1180px;margin:0 auto;padding:42px 5% 70px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap;margin-bottom:22px}
-    h2{font-size:30px;margin:0 0 8px}.sub{color:var(--muted);margin:0;line-height:1.5}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-    .product{background:#fff;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 8px 24px #21134d0a;display:flex;flex-direction:column;min-height:205px}
-    .product .emoji{font-size:34px;margin-bottom:13px}.product h3{margin:0 0 8px;font-size:18px}.product p{margin:0 0 18px;color:var(--muted);font-size:13px;line-height:1.5;flex:1}
-    .product .btn{width:100%}
-    .info{margin-top:32px;padding:22px;border-radius:16px;background:#eee9fb;line-height:1.65;color:#45366d}
-    footer{background:#17132b;color:#dcd5ef;padding:28px 5%;text-align:center;font-size:13px;line-height:1.8}
-    footer a{color:#d1c0ff}
-    .modal{display:none;position:fixed;inset:0;background:#100b20b8;z-index:10;overflow:auto;padding:22px}
-    .modal.show{display:block}.dialog{max-width:720px;margin:20px auto;background:#fff;border-radius:18px;padding:26px;box-shadow:0 20px 70px #0004}
-    .dialog-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
-    .dialog h2{font-size:25px}.close{border:0;background:#f0edf6;border-radius:9px;padding:9px 12px;font-size:20px;cursor:pointer}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}
-    label{font-size:13px;font-weight:800}.required{color:#c33}
-    input,select,textarea{width:100%;padding:12px;border:1px solid #dcd6e8;border-radius:9px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
-    textarea{min-height:92px;resize:vertical}
-    input:focus,select:focus,textarea:focus{outline:2px solid #c9b8ff;border-color:var(--purple)}
-    .hint{font-size:11px;color:var(--muted);line-height:1.4}
-    .form-actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;margin-top:5px}
-    .btn.secondary{background:#eeeaf6;color:#34265c}
-    .result{display:none;margin-top:18px;padding:17px;border-radius:12px;background:#f0ebfb;border:1px solid #ded3f7}
-    .result.show{display:block}.result h3{margin:0 0 8px}.result pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.55 Arial;color:#30264a}
-    @media(max-width:600px){.hero{padding:48px 5% 55px}form{grid-template-columns:1fr}.field.full,.form-actions{grid-column:1}.dialog{padding:19px}.nav a{margin-left:10px}}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho-Style E-Commerce Store - README</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+        h1, h2, h3 {
+            color: #111827;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 0.4rem;
+            margin-top: 1.8rem;
+        }
+        h1 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: #9f2089; /* Meesho-inspired accent */
+        }
+        code {
+            background: #f3f4f6;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.88em;
+            color: #be185d;
+        }
+        pre {
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            line-height: 1.45;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 20px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+        .badge-pink { background-color: #9f2089; }
+        .badge-blue { background-color: #0284c7; }
+        .badge-green { background-color: #16a34a; }
+        .badge-orange { background-color: #d97706; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        th, td {
+            border: 1px solid #e5e7eb;
+            padding: 10px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+        }
+        ul, ol { padding-left: 22px; }
+        li { margin-bottom: 6px; }
+        a { color: #9f2089; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
 </head>
 <body>
-<header>
-  <div class="nav">
-    <div class="brand">INK<span>SPOT</span></div>
-    <nav><a href="#products">Products</a><a href="#how">How to Order</a><a href="#contact">Contact</a></nav>
-  </div>
-  <section class="hero">
-    <div class="eyebrow">Personalised gifts • Custom printing</div>
-    <h1>Your ideas,<br>made personal.</h1>
-    <p>Make every moment special with customised frames, mugs, bottles, keychains and more. Choose a product and send your order details to INKSPOT.</p>
-    <a class="btn light" href="#products">Explore Products</a>
-  </section>
-</header>
+    <div class="container">
+        <h1>🛍️ Your Store Name — Social E-Commerce Web App</h1>
+        <p>
+            <span class="badge badge-pink">Meesho-Style UI</span>
+            <span class="badge badge-blue">HTML / CSS / JS</span>
+            <span class="badge badge-orange">UPI &amp; COD Payments</span>
+            <span class="badge badge-green">Google Sheets Sync</span>
+        </p>
+        <p>A modern, mobile-first e-commerce and reselling web application inspired by Meesho. Customers can browse multi-category products, add items to their cart, choose online (UPI/QR) or Cash on Delivery (COD) payment methods, and automatically save every order directly into <strong>Google Sheets</strong>.</p>
 
-<main>
-  <section id="products">
-    <div class="section-head">
-      <div><h2>Our Products</h2><p class="sub">Choose a product to open its order form.</p></div>
-      <span class="sub">8 customisation options</span>
+        <p><strong>🔗 Live Store Link:</strong> <a href="https://yourstorename.com" target="_blank">https://yourstorename.com</a></p>
+
+        <h2>✨ Key Features</h2>
+        <ul>
+            <li><strong>Meesho-Style Product Catalog:</strong> Clean product cards with discount badges, ratings, category filters, and search bar.</li>
+            <li><strong>Smart Shopping Cart:</strong> Add/remove items, update quantities, and auto-calculate total price and delivery charges.</li>
+            <li><strong>Multiple Payment Options:</strong> Supports <strong>UPI (GPay / PhonePe / Paytm QR &amp; ID)</strong>, Online Payment, and <strong>Cash on Delivery (COD)</strong> with Transaction ID capture.</li>
+            <li><strong>Automatic Google Sheets Integration:</strong> Every placed order and payment detail is instantly saved to a Google Sheet via <strong>Google Apps Script</strong>—no paid backend required.</li>
+            <li><strong>WhatsApp Order Confirmation:</strong> Option for customers to send order summaries directly on WhatsApp after checkout.</li>
+            <li><strong>100% Mobile Responsive:</strong> Optimized for smooth shopping on Android, iOS, and desktop browsers.</li>
+        </ul>
+
+        <h2>📁 Project Structure</h2>
+        <pre><code>meesho-style-store/
+├── index.html              # Home page with product grid &amp; categories
+├── product.html            # Single product details page (optional)
+├── cart.html               # Cart &amp; checkout page with payment options
+├── css/
+│   └── style.css           # Responsive styling &amp; mobile navigation
+├── js/
+│   ├── products.js         # Product catalog data (name, price, image, category)
+│   ├── cart.js             # Cart logic &amp; price calculation
+│   └── checkout.js         # Google Sheets API &amp; payment form submission
+├── apps-script/
+│   └── Code.gs             # Google Apps Script to save orders into Google Sheets
+└── images/                 # Product photos, banners &amp; UPI QR code</code></pre>
+
+        <h2>📊 Google Sheets Order Database Format</h2>
+        <p>When a customer completes checkout, the following columns are automatically recorded in your Google Sheet:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Column</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>Timestamp</code></td>
+                    <td>Date and time when the order was placed</td>
+                </tr>
+                <tr>
+                    <td><code>Order ID</code></td>
+                    <td>Unique auto-generated order number (e.g., <code>ORD-1024</code>)</td>
+                </tr>
+                <tr>
+                    <td><code>Customer Name</code></td>
+                    <td>Full name of the buyer</td>
+                </tr>
+                <tr>
+                    <td><code>Phone / WhatsApp</code></td>
+                    <td>10-digit contact number</td>
+                </tr>
+                <tr>
+                    <td><code>Delivery Address</code></td>
+                    <td>Full shipping address with Pincode</td>
+                </tr>
+                <tr>
+                    <td><code>Products &amp; Qty</code></td>
+                    <td>Ordered item names, sizes, and quantities</td>
+                </tr>
+                <tr>
+                    <td><code>Total Amount (₹)</code></td>
+                    <td>Final payable order amount</td>
+                </tr>
+                <tr>
+                    <td><code>Payment Mode</code></td>
+                    <td><code>UPI / Online</code> or <code>Cash on Delivery (COD)</code></td>
+                </tr>
+                <tr>
+                    <td><code>Payment Status / UTR</code></td>
+                    <td>UPI Transaction ID (UTR) or <code>Pending (COD)</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>⚙️ Setup &amp; Installation</h2>
+        <ol>
+            <li><strong>Clone or Download:</strong>
+                <pre><code>git clone https://github.com/yourusername/meesho-style-store.git</code></pre>
+            </li>
+            <li><strong>Set Up Google Sheets Backend:</strong>
+                <ul>
+                    <li>Create a new <strong>Google Sheet</strong> and add the column headers listed above in Row 1.</li>
+                    <li>Go to <strong>Extensions &rarr; Apps Script</strong>, paste the code from <code>apps-script/Code.gs</code>, and deploy it as a <strong>Web App</strong> (Access: <em>Anyone</em>).</li>
+                    <li>Copy the generated <strong>Web App URL</strong> and paste it into <code>js/checkout.js</code>.</li>
+                </ul>
+            </li>
+            <li><strong>Configure Payment QR:</strong> Replace <code>images/upi-qr.png</code> with your own UPI QR code and update your UPI ID in <code>cart.html</code>.</li>
+            <li><strong>Run Locally:</strong> Open <code>index.html</code> in your browser or launch with VS Code Live Server.</li>
+        </ol>
+
+        <h2>🛠️ Technologies Used</h2>
+        <ul>
+            <li><strong>Frontend:</strong> HTML5, CSS3 (Flexbox &amp; Grid), Vanilla JavaScript (ES6+)</li>
+            <li><strong>Database:</strong> Google Sheets</li>
+            <li><strong>Backend Connector:</strong> Google Apps Script (REST Webhook via <code>fetch()</code>)</li>
+            <li><strong>Hosting:</strong> GitHub Pages / Netlify / Vercel</li>
+        </ul>
+
+        <h2>📞 Store Support &amp; Contact</h2>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:support@yourstorename.com">support@yourstorename.com</a></li>
+            <li><strong>WhatsApp Support:</strong> +91-XXXXXXXXXX</li>
+            <li><strong>Location:</strong> India</li>
+        </ul>
     </div>
-    <div class="grid">
-      <article class="product"><div class="emoji">🖼️</div><h3>Customised Photo Frame</h3><p>Personalised photo frames for memories and gifts.</p><button class="btn" onclick="openOrder('Customised Photo Frame')">Order Now</button></article>
-      <article class="product"><div class="emoji">☕</div><h3>Customised Mug</h3><p>Custom names, photos and designs on mugs.</p><button class="btn" onclick="openOrder('Customised Mug')">Order Now</button></article>
-      <article class="product"><div class="emoji">🧴</div><h3>Customised Bottle</h3><p>Personalised bottles with your chosen design.</p><button class="btn" onclick="openOrder('Customised Bottle')">Order Now</button></article>
-      <article class="product"><div class="emoji">🔑</div><h3>Keychain</h3><p>Custom keychains with names, photos or text.</p><button class="btn" onclick="openOrder('Keychain')">Order Now</button></article>
-      <article class="product"><div class="emoji">🏷️</div><h3>Acrylic Badge</h3><p>Personalised acrylic badges for events and groups.</p><button class="btn" onclick="openOrder('Acrylic Badge')">Order Now</button></article>
-      <article class="product"><div class="emoji">💳</div><h3>Acrylic Card</h3><p>Custom acrylic cards with your details and artwork.</p><button class="btn" onclick="openOrder('Acrylic Card')">Order Now</button></article>
-      <article class="product"><div class="emoji">🎗️</div><h3>Customised Sash</h3><p>Custom printed sashes for schools, events and occasions.</p><button class="btn" onclick="openOrder('Customised Sash')">Order Now</button></article>
-      <article class="product"><div class="emoji">🪪</div><h3>Lanyard</h3><p>Personalised lanyards for IDs, teams and events.</p><button class="btn" onclick="openOrder('Lanyard')">Order Now</button></article>
-    </div>
-  </section>
-
-  <section id="how" class="info">
-    <h2>How to Order</h2>
-    1. Select your product and complete its order form.<br>
-    2. Add your delivery details and customisation instructions.<br>
-    3. Choose fixed-price product or request a quotation.<br>
-    4. Review your order summary and send it to INKSPOT by WhatsApp or email.
-    <p><strong>Important:</strong> Your order is only a request. Price, delivery charges and availability must be confirmed by INKSPOT. No payment is taken on this website.</p>
-  </section>
-</main>
-
-<footer id="contact">
-  <strong>INKSPOT</strong><br>
-  Customised Gifts & Printing<br>
-  WhatsApp: <a href="https://wa.me/91910390655">+91 9103090655</a> |
-  Email: <a href="mailto:faisalmir655244@gmail.com">faisalmir655244@gmail.com</a><br>
-  © <span id="year"></span> INKSPOT. All rights reserved.
-</footer>
-
-<div class="modal" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="formTitle">
-  <div class="dialog">
-    <div class="dialog-top"><div><h2 id="formTitle">Product Order Form</h2><p class="sub">Fill in the details below.</p></div><button class="close" onclick="closeOrder()" aria-label="Close">×</button></div>
-    <form id="orderForm">
-      <div class="field full"><label for="product">Product</label><input id="product" name="product" readonly></div>
-      <div class="field"><label for="customer">Customer Name <span class="required">*</span></label><input id="customer" name="customer" required maxlength="100" autocomplete="name"></div>
-      <div class="field"><label for="email">Customer Email <span class="required">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
-      <div class="field"><label for="phone">WhatsApp Number <span class="required">*</span></label><input id="phone" name="phone" type="tel" required maxlength="20" autocomplete="tel"></div>
-      <div class="field"><label for="area">Area / District <span class="required">*</span></label><input id="area" name="area" required></div>
-      <div class="field full"><label for="address">Full Delivery Address <span class="required">*</span></label><textarea id="address" name="address" required autocomplete="street-address"></textarea></div>
-      <div class="field"><label for="pin">PIN Code <span class="required">*</span></label><input id="pin" name="pin" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required placeholder="6-digit PIN code"></div>
-      <div class="field"><label for="pricing">Pricing Type <span class="required">*</span></label><select id="pricing" name="pricing" required><option value="">Select pricing type</option><option>Standard Product - Fixed Price</option><option>Custom Design - Request Quotation</option></select></div>
-      <div class="field"><label for="quantity">Quantity <span class="required">*</span></label><select id="quantity" name="quantity" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>10</option></select></div>
-      <div class="field full"><label for="design">Design / Name / Printing Details <span class="required">*</span></label><textarea id="design" name="design" required placeholder="Describe the name, text, colour, photo or design you want."></textarea></div>
-      <div class="field full"><label for="drive">Photo or Design Google Drive Link</label><input id="drive" name="drive" type="url" placeholder="https://drive.google.com/..."><span class="hint">Set the file's Google Drive access so INKSPOT can view it. This form does not upload files.</span></div>
-      <div class="field full"><label for="notes">Additional Instructions</label><textarea id="notes" name="notes" placeholder="Any other instructions (optional)"></textarea></div>
-      <div class="form-actions"><button class="btn" type="submit">Create Order Summary</button><button class="btn secondary" type="button" onclick="closeOrder()">Cancel</button></div>
-    </form>
-    <div class="result" id="result" aria-live="polite">
-      <h3>Order summary created</h3>
-      <p class="sub">Your details are ready. Choose WhatsApp or email to send the order request.</p>
-      <pre id="summaryText"></pre>
-      <div class="form-actions"><button class="btn" id="whatsappBtn" type="button">Send by WhatsApp</button><button class="btn secondary" id="emailBtn" type="button">Send by Email</button><button class="btn secondary" id="copyBtn" type="button">Copy Summary</button></div>
-      <p class="hint">An order ID is generated in this browser for reference. It is not saved to a central order database.</p>
-    </div>
-  </div>
-</div>
-
-<script>
-  const OWNER_EMAIL = "faisalmir655244@gmail.com";
-  const OWNER_WHATSAPP = "91910390655";
-  let currentSummary = "";
-
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  function openOrder(productName) {
-    document.getElementById("orderForm").reset();
-    document.getElementById("product").value = productName;
-    document.getElementById("formTitle").textContent = productName + " Order Form";
-    document.getElementById("result").classList.remove("show");
-    document.getElementById("orderModal").classList.add("show");
-    document.body.style.overflow = "hidden";
-  }
-
-  function closeOrder() {
-    document.getElementById("orderModal").classList.remove("show");
-    document.body.style.overflow = "";
-  }
-
-  document.getElementById("orderModal").addEventListener("click", function(e) {
-    if (e.target === this) closeOrder();
-  });
-
-  document.getElementById("orderForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    if (!this.reportValidity()) return;
-
-    const data = new FormData(this);
-    const orderId = "INK-" + Date.now();
-    const date = new Date().toLocaleString("en-IN");
-    const fields = [
-      ["Order ID", orderId], ["Date", date], ["Product", data.get("product")],
-      ["Customer", data.get("customer")], ["Email", data.get("email")],
-      ["WhatsApp", data.get("phone")], ["Full Delivery Address", data.get("address")],
-      ["Area / District", data.get("area")], ["PIN Code", data.get("pin")],
-      ["Pricing Type", data.get("pricing")], ["Quantity", data.get("quantity")],
-      ["Design Details", data.get("design")], ["Photo / Design Link", data.get("drive") || "Not provided"],
-      ["Additional Instructions", data.get("notes") || "None"],
-      ["Status", "NEW - PAYMENT NOT RECEIVED"]
-    ];
-    currentSummary = "INKSPOT ORDER REQUEST\n" + fields.map(([k,v]) => k + ": " + v).join("\n");
-    document.getElementById("summaryText").textContent = currentSummary;
-    document.getElementById("result").classList.add("show");
-
-    document.getElementById("whatsappBtn").onclick = function() {
-      window.open("https://wa.me/" + OWNER_WHATSAPP + "?text=" + encodeURIComponent(currentSummary), "_blank");
-    };
-    document.getElementById("emailBtn").onclick = function() {
-      const subject = "New INKSPOT Order - " + orderId;
-      window.location.href = "mailto:" + OWNER_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(currentSummary);
-    };
-    document.getElementById("copyBtn").onclick = async function() {
-      try {
-        await navigator.clipboard.writeText(currentSummary);
-        this.textContent = "Copied!";
-      } catch(err) {
-        const area = document.createElement("textarea");
-        area.value = currentSummary; document.body.appendChild(area);
-        area.select(); document.execCommand("copy"); area.remove();
-        this.textContent = "Copied!";
-      }
-    };
-    document.getElementById("result").scrollIntoView({behavior:"smooth", block:"nearest"});
-  });
-
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") closeOrder();
-  });
-</script>
 </body>
 </html>
